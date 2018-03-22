@@ -1,0 +1,184 @@
+Creating, connecting and working with private Network form scratch
+--------------------------------------------------
+INDEX
+--------------------------------------------------
+FOR LINUX
+A. Setting up private geth node
+B. Setting up private geth node on server
+C. Setting up miner
+D. Deploying contracts on the private Network
+
+--------------------------------------------------
+
+
+
+FOR LINUX
+
+
+--------------------------------------------------
+A. (Setting up private geth node)
+--------------------------------------------------
+
+INTRODUCTION:
+
+This Step describes the STANDARD way to create a private geth node,
+which will be used in further steps again.
+
+STEPS:
+
+1. 
+    Go to a folder you want.
+
+2. 
+    create a folder named "testnet" by 
+    <code>
+    mkdir testnet
+    </code>
+ 
+3. 
+    enter into the folder
+    <code>
+    cd testnet
+    </code>
+
+4. 
+    create a genesis file named genesis.json and add the following in the file 
+    <code>
+    {
+       "config": {
+          "chainId": 1994,
+          "homesteadBlock": 0,
+          "eip155Block": 0,
+          "eip158Block": 0,
+          "byzantiumBlock": 0
+       },
+       "difficulty": "400",
+       "gasLimit": "9000000000000",
+       "alloc": {
+          "9a963d0eefeb62678d8efb48561c81e51c552797": { 
+              "balance": "9606938044258990275541962092341162602522202993782792835301376" 
+          },
+          "30f28686aef33adbfbc13797b1d9f5a2f2759f56": { 
+              "balance": "9606938044258990275541962092341162602522202993782792835301376" 
+          }
+       }
+    }
+    </code>
+
+
+5. 
+    Now execute this following command to initiate your data directory
+    
+    <code>
+    geth --datadir ./DataDir init ./genesis.json
+    </code>
+
+6. 
+    Go to keystore folder in DataDir folder
+    <code>
+    cd DataDir/keystore
+    </code> 
+
+7. 
+
+    pull wallet file from github into the keystore folder
+    <code>
+    git init; git pull https://github.com/vasa-develop/eth_wallet.git
+    </code>
+
+
+
+--------------------------------------------------
+B. (Setting up private geth node on server)
+--------------------------------------------------
+
+
+INTRODUCTION:
+We have to set up a node on a server which will act as a bootnode for our network
+and will also expose an RPC port so that you can execute/interact with your contracts. 
+
+STEPS:
+
+1. 
+    Go to any favourable folder in your server and create a geth node there using Step A explained above.
+
+2. 
+    Now come into testnet folder and execute the following command.
+    <code>
+    geth --datadir <path to testnet folder>/testnet/DataDir --rpc --networkid 1111 --rpcport "8545" --rpcaddr "0.0.0.0" --rpccorsdomain "*" console
+    </code>
+
+3. Now in few seconds you will see an interactive console. execute the following command
+
+    <code>
+    personal.unlockAccount(eth.coinbase)
+    </code>
+
+
+
+--------------------------------------------------
+C. Setting up miner
+--------------------------------------------------
+
+INTRODUCTION:
+In order to commit changes to over blockchain ledger we have to set up a miner node
+which will do this for us.  
+
+STEPS:
+
+1.  This can be done on server as well as local system.
+    NOTE:  IT IS RECOMMENDED THAT YOU DO THIS STEPS IN A NEW FOLDER OUT OF "Testnet" folder,
+    AS IT CAN INTERFARE WITH THE EXISTING PEER.
+
+2.  Follow Steps in as mentioned in  step A to create a geth node.
+
+3.  Now come to the Testnet folder of the peer you just created(not the Testnet folder of the
+    previous peer) and execute the following command
+
+    <code>
+
+    geth --datadir ./DataDir --networkid 1111 --bootnodes "enode://02034f05582ab271269dbf6be5ebf8e24669479358790ff9d2b3c1992b13765b1b05a1fc8a35a40027dd5033d9e96eda34f714d3ee80c670b0c558a520f38dc2@54.205.136.66:30303" --mine --minerthreads=1 --etherbase="0x30f28686aef33adbfbc13797b1d9f5a2f2759f56" console
+
+    </code>
+
+    <code>(General code)
+
+    geth --datadir ./DataDir --networkid 1111 --bootnodes <bootnode url> --mine --minerthreads=1 --etherbase=<account hex pubkey> console
+
+    </code>
+
+
+--------------------------------------------------
+D. Deploying contracts on the private Network
+--------------------------------------------------
+
+INTRODUCTION:
+    This Step shows how to deploy and interact with an contract using a node application.
+
+
+STEPS:
+    
+1.
+    This can be done on a server or a local machine (preferably on server if you want to
+    host to application).
+
+2. 
+    Go to a folder and pull a github repository.
+
+    <code>
+
+    git init; git pull https://github.com/vasa-develop/Step_4_Node_App.git;
+
+    </code>
+
+3.
+    Start the node application.
+
+    NOTE: If you donot have npm  install on your system then proceed after installing npm.
+
+    <code>
+
+    cd Step_4_Node_App; npm install; node server.js
+
+    </code>
+
