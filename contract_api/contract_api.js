@@ -21,7 +21,7 @@ if (typeof web3 !== 'undefined') {
         web3.eth.defaultAccount = walletAddress;
 
 
- 		var KYC_Contract = web3.eth.contract([ { "constant": false, "inputs": [ { "name": "orgAddress", "type": "address" }, { "name": "name", "type": "string" }, { "name": "address1", "type": "string" }, { "name": "address2", "type": "string" }, { "name": "city", "type": "string" }, { "name": "state", "type": "string" }, { "name": "country", "type": "string" }, { "name": "website", "type": "string" }, { "name": "isAdmin", "type": "bool" }, { "name": "isVendor", "type": "bool" }, { "name": "isKycApprovar", "type": "bool" } ], "name": "AddOrg", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [ { "name": "userAddress", "type": "address" }, { "name": "lastName", "type": "string" }, { "name": "firstName", "type": "string" }, { "name": "email", "type": "string" }, { "name": "mobileNumber", "type": "string" }, { "name": "dob", "type": "string" } ], "name": "AddUser", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [ { "name": "userAddress", "type": "address" }, { "name": "orgAddress", "type": "address" } ], "name": "GetUser", "outputs": [ { "name": "lastName", "type": "string", "value": "null" }, { "name": "firstName", "type": "string", "value": "null" }, { "name": "email", "type": "string", "value": "null" }, { "name": "mobileNumber", "type": "string", "value": "null" }, { "name": "dob", "type": "string", "value": "null" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "userAddress", "type": "address" }, { "name": "orgAddress", "type": "address" }, { "name": "aprrovalDoneBy", "type": "string" }, { "name": "approvalType", "type": "string" }, { "name": "approvalInfo", "type": "string" }, { "name": "status", "type": "string" } ], "name": "AddKYCApproval", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [ { "name": "userAddress", "type": "address" } ], "name": "GetUserOrgApprovalMapping", "outputs": [ { "name": "approvedOrgList", "type": "address[]", "value": [] } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "userAddress", "type": "address" }, { "name": "orgAddress", "type": "address" } ], "name": "AddUserOrgApproval", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [ { "name": "orgAddress", "type": "address" } ], "name": "GetOrgInfo2", "outputs": [ { "name": "isAdmin", "type": "bool", "value": false }, { "name": "isVendor", "type": "bool", "value": false }, { "name": "isKycApprovar", "type": "bool", "value": false } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "userAddress", "type": "address" } ], "name": "GetKYCApprovalLength", "outputs": [ { "name": "", "type": "uint256", "value": "0" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "orgAddress", "type": "address" }, { "name": "userAddress", "type": "address" }, { "name": "status", "type": "string" } ], "name": "ChangeKYCApprovalStatus", "outputs": [ { "name": "isChanged", "type": "bool" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [ { "name": "userAddress", "type": "address" }, { "name": "orgAddress", "type": "address" } ], "name": "IsOrgApproved", "outputs": [ { "name": "isApproved", "type": "bool", "value": false } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "userAddress", "type": "address" }, { "name": "index", "type": "uint256" } ], "name": "GetKYCApproval", "outputs": [ { "name": "aprrovalDoneBy", "type": "string" }, { "name": "approvalType", "type": "string" }, { "name": "approvalInfo", "type": "string" }, { "name": "status", "type": "string" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "orgAddress", "type": "address" } ], "name": "GetOrgInfo", "outputs": [ { "name": "name", "type": "string", "value": "" }, { "name": "address1", "type": "string", "value": "" }, { "name": "address2", "type": "string", "value": "" }, { "name": "city", "type": "string", "value": "" }, { "name": "state", "type": "string", "value": "" }, { "name": "country", "type": "string", "value": "" }, { "name": "website", "type": "string", "value": "" } ], "payable": false, "stateMutability": "view", "type": "function" } ]);
+        var KYC_Contract = web3.eth.contract([ { "constant": false, "inputs": [ { "name": "orgAddress", "type": "address" }, { "name": "name", "type": "string" }, { "name": "address1", "type": "string" }, { "name": "address2", "type": "string" }, { "name": "city", "type": "string" }, { "name": "state", "type": "string" }, { "name": "country", "type": "string" }, { "name": "website", "type": "string" }, { "name": "isAdmin", "type": "bool" }, { "name": "isVendor", "type": "bool" }, { "name": "isKycApprovar", "type": "bool" } ], "name": "AddOrg", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [ { "name": "userAddress", "type": "address" }, { "name": "lastName", "type": "string" }, { "name": "firstName", "type": "string" }, { "name": "email", "type": "string" }, { "name": "mobileNumber", "type": "string" }, { "name": "dob", "type": "string" } ], "name": "AddUser", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [ { "name": "userAddress", "type": "address" }, { "name": "orgAddress", "type": "address" } ], "name": "GetUser", "outputs": [ { "name": "lastName", "type": "string", "value": "null" }, { "name": "firstName", "type": "string", "value": "null" }, { "name": "email", "type": "string", "value": "null" }, { "name": "mobileNumber", "type": "string", "value": "null" }, { "name": "dob", "type": "string", "value": "null" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "userAddress", "type": "address" }, { "name": "orgAddress", "type": "address" }, { "name": "aprrovalDoneBy", "type": "string" }, { "name": "approvalType", "type": "string" }, { "name": "approvalInfo", "type": "string" }, { "name": "status", "type": "string" } ], "name": "AddKYCApproval", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [ { "name": "userAddress", "type": "address" } ], "name": "GetUserOrgApprovalMapping", "outputs": [ { "name": "approvedOrgList", "type": "address[]", "value": [] } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "userAddress", "type": "address" }, { "name": "orgAddress", "type": "address" } ], "name": "AddUserOrgApproval", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [ { "name": "orgAddress", "type": "address" } ], "name": "GetOrgInfo2", "outputs": [ { "name": "isAdmin", "type": "bool", "value": false }, { "name": "isVendor", "type": "bool", "value": false }, { "name": "isKycApprovar", "type": "bool", "value": false } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "userAddress", "type": "address" } ], "name": "GetKYCApprovalLength", "outputs": [ { "name": "", "type": "uint256", "value": "0" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "orgAddress", "type": "address" }, { "name": "userAddress", "type": "address" }, { "name": "status", "type": "string" } ], "name": "ChangeKYCApprovalStatus", "outputs": [ { "name": "isChanged", "type": "bool" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [ { "name": "userAddress", "type": "address" }, { "name": "orgAddress", "type": "address" } ], "name": "IsOrgApproved", "outputs": [ { "name": "isApproved", "type": "bool", "value": false } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "userAddress", "type": "address" }, { "name": "index", "type": "uint256" } ], "name": "GetKYCApproval", "outputs": [ { "name": "aprrovalDoneBy", "type": "string" }, { "name": "approvalType", "type": "string" }, { "name": "approvalInfo", "type": "string" }, { "name": "status", "type": "string" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "orgAddress", "type": "address" } ], "name": "GetOrgInfo", "outputs": [ { "name": "name", "type": "string", "value": "" }, { "name": "address1", "type": "string", "value": "" }, { "name": "address2", "type": "string", "value": "" }, { "name": "city", "type": "string", "value": "" }, { "name": "state", "type": "string", "value": "" }, { "name": "country", "type": "string", "value": "" }, { "name": "website", "type": "string", "value": "" } ], "payable": false, "stateMutability": "view", "type": "function" } ]);
 
         var contract = KYC_Contract.at(contractAddress);
         //console.log(contract);
@@ -45,7 +45,7 @@ if (typeof web3 !== 'undefined') {
 
 
                     var trxAddr = web3.eth.sendTransaction({to:contractAddress, from:walletAddress, data: getData, 
-                        gas: gasNeeded, gasPrice: "180000000000"},function(error,result)}{
+                        gas: gasNeeded, gasPrice: "180000000000"},function(error,result){
                             if(error){
                                 res.send(error);
                             }
@@ -72,7 +72,7 @@ if (typeof web3 !== 'undefined') {
 
 
                     var trxAddr = web3.eth.sendTransaction({to:contractAddress, from:walletAddress, data: getData, 
-                        gas: gasNeeded, gasPrice: "180000000000"},function(error,result)}{
+                        gas: gasNeeded, gasPrice: "180000000000"},function(error,result){
                             if(error){
                                 res.send(error);
                             }
@@ -100,7 +100,7 @@ if (typeof web3 !== 'undefined') {
 
 
                     var trxAddr = web3.eth.sendTransaction({to:contractAddress, from:walletAddress, data: getData, 
-                        gas: gasNeeded, gasPrice: "180000000000"},function(error,result)}{
+                        gas: gasNeeded, gasPrice: "180000000000"},function(error,result){
                             if(error){
                                 res.send(error);
                             }
@@ -109,13 +109,13 @@ if (typeof web3 !== 'undefined') {
                             }
                         });
 
-                	
-				});
+                    
+                });
 
 
 
-				app.get('/GetKYCApprovalLength/:userAddress',function(req,res){
-					
+                app.get('/GetKYCApprovalLength/:userAddress',function(req,res){
+                    
 
                     unlockAccount();
 
@@ -127,7 +127,7 @@ if (typeof web3 !== 'undefined') {
 
 
                     var trxAddr = web3.eth.sendTransaction({to:contractAddress, from:walletAddress, data: getData, 
-                        gas: gasNeeded, gasPrice: "180000000000"},function(error,result)}{
+                        gas: gasNeeded, gasPrice: "180000000000"},function(error,result){
                             if(error){
                                 res.send(error);
                             }
@@ -137,13 +137,13 @@ if (typeof web3 !== 'undefined') {
                         });
 
 
-				});
+                });
 
 
 
-				app.get('/GetKYCApprovalLength/:userAddress/:index',function(req,res){
+                app.get('/GetKYCApprovalLength/:userAddress/:index',function(req,res){
 
-					
+                    
                     unlockAccount();
 
 
@@ -154,7 +154,7 @@ if (typeof web3 !== 'undefined') {
 
 
                     var trxAddr = web3.eth.sendTransaction({to:contractAddress, from:walletAddress, data: getData, 
-                        gas: gasNeeded, gasPrice: "180000000000"},function(error,result)}{
+                        gas: gasNeeded, gasPrice: "180000000000"},function(error,result){
                             if(error){
                                 res.send(error);
                             }
@@ -163,9 +163,9 @@ if (typeof web3 !== 'undefined') {
                             }
                         });
 
-                	
+                    
 
-				});
+                });
 
 
                 app.get('/ChangeKYCApprovalStatus/:orgAddress/:userAddress/:status',function(req,res){
@@ -180,7 +180,7 @@ if (typeof web3 !== 'undefined') {
 
 
                     var trxAddr = web3.eth.sendTransaction({to:contractAddress, from:walletAddress, data: getData, 
-                        gas: gasNeeded, gasPrice: "180000000000"},function(error,result)}{
+                        gas: gasNeeded, gasPrice: "180000000000"},function(error,result){
                             if(error){
                                 res.send(error);
                             }
@@ -195,9 +195,9 @@ if (typeof web3 !== 'undefined') {
 
 
 
-				app.get('/AddUser/:userAddress/:lastname/:firstName/:email/:mobileNumber/:dob',function(req,res){
+                app.get('/AddUser/:userAddress/:lastname/:firstName/:email/:mobileNumber/:dob',function(req,res){
 
-					unlockAccount();
+                    unlockAccount();
 
 
                     var getData = contract.AddUser.getData(req.params.userAddress,
@@ -208,7 +208,7 @@ if (typeof web3 !== 'undefined') {
 
 
                     var trxAddr = web3.eth.sendTransaction({to:contractAddress, from:walletAddress, data: getData, 
-                        gas: gasNeeded, gasPrice: "180000000000"},function(error,result)}{
+                        gas: gasNeeded, gasPrice: "180000000000"},function(error,result){
                             if(error){
                                 res.send(error);
                             }
@@ -219,14 +219,14 @@ if (typeof web3 !== 'undefined') {
 
                     
                 
-				});
+                });
 
 
 
 
-				app.get('/AddOrg/:orgAddress/:name/:address1/:address2/:city/:state/:country/:website/:isAdmin/:isVendor/:isKycApprovar',function(req,res){
+                app.get('/AddOrg/:orgAddress/:name/:address1/:address2/:city/:state/:country/:website/:isAdmin/:isVendor/:isKycApprovar',function(req,res){
 
-					
+                    
                     unlockAccount();
 
 
@@ -242,7 +242,7 @@ if (typeof web3 !== 'undefined') {
 
 
                     var trxAddr = web3.eth.sendTransaction({to:contractAddress, from:walletAddress, data: getData, 
-                        gas: gasNeeded, gasPrice: "180000000000"},function(error,result)}{
+                        gas: gasNeeded, gasPrice: "180000000000"},function(error,result){
                             if(error){
                                 res.send(error);
                             }
@@ -251,12 +251,12 @@ if (typeof web3 !== 'undefined') {
                             }
                         });
 
-				});				
+                });             
 
 
 
 
-				app.get('/GetUser/:userAddress/:orgAddress',function(req,res){
+                app.get('/GetUser/:userAddress/:orgAddress',function(req,res){
 
                     unlockAccount();
 
@@ -268,7 +268,7 @@ if (typeof web3 !== 'undefined') {
 
 
                     var trxAddr = web3.eth.sendTransaction({to:contractAddress, from:walletAddress, data: getData, 
-                        gas: gasNeeded, gasPrice: "180000000000"},function(error,result)}{
+                        gas: gasNeeded, gasPrice: "180000000000"},function(error,result){
                             if(error){
                                 res.send(error);
                             }
@@ -276,17 +276,17 @@ if (typeof web3 !== 'undefined') {
                                 res.send(result);
                             }
                         });
-					
+                    
                            
 
-				});		
+                });     
 
 
 
 
-				app.get('/GetOrgInfo2/:orgAddress',function(req,res){
+                app.get('/GetOrgInfo2/:orgAddress',function(req,res){
 
-					 
+                     
                     unlockAccount();
 
 
@@ -297,7 +297,7 @@ if (typeof web3 !== 'undefined') {
 
 
                     var trxAddr = web3.eth.sendTransaction({to:contractAddress, from:walletAddress, data: getData, 
-                        gas: gasNeeded, gasPrice: "180000000000"},function(error,result)}{
+                        gas: gasNeeded, gasPrice: "180000000000"},function(error,result){
                             if(error){
                                 res.send(error);
                             }
@@ -307,14 +307,14 @@ if (typeof web3 !== 'undefined') {
                         });
                     
 
-				});
+                });
 
 
 
 
-				app.get('/GetOrgInfo/:orgAddress',function(req,res){
+                app.get('/GetOrgInfo/:orgAddress',function(req,res){
 
-					unlockAccount();
+                    unlockAccount();
 
 
                     var getData = contract.GetOrgInfo.getData(req.params.orgAddress);
@@ -324,7 +324,7 @@ if (typeof web3 !== 'undefined') {
 
 
                     var trxAddr = web3.eth.sendTransaction({to:contractAddress, from:walletAddress, data: getData, 
-                        gas: gasNeeded, gasPrice: "180000000000"},function(error,result)}{
+                        gas: gasNeeded, gasPrice: "180000000000"},function(error,result){
                             if(error){
                                 res.send(error);
                             }
@@ -334,7 +334,7 @@ if (typeof web3 !== 'undefined') {
                         });
 
 
-				});
+                });
 
 
 
@@ -351,7 +351,7 @@ if (typeof web3 !== 'undefined') {
 
 
                     var trxAddr = web3.eth.sendTransaction({to:contractAddress, from:walletAddress, data: getData, 
-                        gas: gasNeeded, gasPrice: "180000000000"},function(error,result)}{
+                        gas: gasNeeded, gasPrice: "180000000000"},function(error,result){
                             if(error){
                                 res.send(error);
                             }
@@ -364,7 +364,7 @@ if (typeof web3 !== 'undefined') {
 
                 });
 
-				
+                
 
                 // Tell express to use this router with /api before.
                 // You can put just '/' if you don't want any sub path before routes.
