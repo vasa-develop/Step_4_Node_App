@@ -229,7 +229,7 @@ if (typeof web3 !== 'undefined') {
                 app.get('/GetUser/:userAddress/:orgAddress',function(req,res){
 
                     
-                    contract.GetKYCApprovalLength(req.params.userAddress, req.params.orgAddress, function(error,result){
+                    contract.GetUser(req.params.userAddress, req.params.orgAddress, function(error,result){
                         if(error){
                             res.send(error);
                         }   
@@ -278,7 +278,7 @@ if (typeof web3 !== 'undefined') {
                 app.get('/IsOrgApproved/:userAddress/:orgAddress',function(req,res){
 
 
-                    contract.GetOrgInfo(req.params.userAddress, req.params.orgAddress, function(error,result){
+                    contract.IsOrgApproved(req.params.userAddress, req.params.orgAddress, function(error,result){
                         if(error){
                             res.send(error);
                         }   
