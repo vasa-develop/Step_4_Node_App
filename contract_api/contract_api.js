@@ -61,26 +61,14 @@ if (typeof web3 !== 'undefined') {
 
                 app.get('/GetUserOrgApprovalMapping/:userAddress', function(req, res){
 
-
-                    unlockAccount();
-
-
-                    var getData = contract.GetUserOrgApprovalMapping.getData(req.params.userAddress);
-                    
-                    var gasNeeded = contract.GetUserOrgApprovalMapping.estimateGas(req.params.userAddress,
-                     { from: walletAddress });
-
-
-                    var trxAddr = web3.eth.sendTransaction({to:contractAddress, from:walletAddress, data: getData, 
-                        gas: gasNeeded, gasPrice: "180000000000"},function(error,result){
-                            if(error){
-                                res.send(error);
-                            }
-                            else{
-                                res.send(result);
-                            }
-                        });
-
+                    contract.GetUserOrgApprovalMapping(req.params.userAddress,function(error,result){
+                        if(error){
+                            res.send(error);
+                        }   
+                        else{
+                            res.send(result);
+                        }
+                    });
 
                 });
 
@@ -117,24 +105,15 @@ if (typeof web3 !== 'undefined') {
                 app.get('/GetKYCApprovalLength/:userAddress',function(req,res){
                     
 
-                    unlockAccount();
 
-
-                    var getData = contract.GetKYCApprovalLength.getData(req.params.userAddress);
-                    
-                    var gasNeeded = contract.GetKYCApprovalLength.estimateGas(req.params.userAddress,
-                     { from: walletAddress });
-
-
-                    var trxAddr = web3.eth.sendTransaction({to:contractAddress, from:walletAddress, data: getData, 
-                        gas: gasNeeded, gasPrice: "180000000000"},function(error,result){
-                            if(error){
-                                res.send(error);
-                            }
-                            else{
-                                res.send(result);
-                            }
-                        });
+                    contract.GetKYCApprovalLength(req.params.userAddress,function(error,result){
+                        if(error){
+                            res.send(error);
+                        }   
+                        else{
+                            res.send(result);
+                        }
+                    });
 
 
                 });
@@ -144,24 +123,15 @@ if (typeof web3 !== 'undefined') {
                 app.get('/GetKYCApprovalLength/:userAddress/:index',function(req,res){
 
                     
-                    unlockAccount();
+                    contract.GetKYCApprovalLength(req.params.userAddress, req.params.index, function(error,result){
+                        if(error){
+                            res.send(error);
+                        }   
+                        else{
+                            res.send(result);
+                        }
+                    });
 
-
-                    var getData = contract.GetKYCApprovalLength.getData(req.params.userAddress,req.params.index);
-                    
-                    var gasNeeded = contract.GetKYCApprovalLength.estimateGas(req.params.userAddress,req.params.index,
-                     { from: walletAddress });
-
-
-                    var trxAddr = web3.eth.sendTransaction({to:contractAddress, from:walletAddress, data: getData, 
-                        gas: gasNeeded, gasPrice: "180000000000"},function(error,result){
-                            if(error){
-                                res.send(error);
-                            }
-                            else{
-                                res.send(result);
-                            }
-                        });
 
                     
 
@@ -258,26 +228,15 @@ if (typeof web3 !== 'undefined') {
 
                 app.get('/GetUser/:userAddress/:orgAddress',function(req,res){
 
-                    unlockAccount();
-
-
-                    var getData = contract.GetUser.getData(req.params.userAddress,req.params.orgAddress);
                     
-                    var gasNeeded = contract.GetUser.estimateGas(req.params.userAddress,req.params.orgAddress,
-                     { from: walletAddress });
-
-
-                    var trxAddr = web3.eth.sendTransaction({to:contractAddress, from:walletAddress, data: getData, 
-                        gas: gasNeeded, gasPrice: "180000000000"},function(error,result){
-                            if(error){
-                                res.send(error);
-                            }
-                            else{
-                                res.send(result);
-                            }
-                        });
-                    
-                           
+                    contract.GetKYCApprovalLength(req.params.userAddress, req.params.orgAddress, function(error,result){
+                        if(error){
+                            res.send(error);
+                        }   
+                        else{
+                            res.send(result);
+                        }
+                    });       
 
                 });     
 
@@ -286,26 +245,15 @@ if (typeof web3 !== 'undefined') {
 
                 app.get('/GetOrgInfo2/:orgAddress',function(req,res){
 
-                     
-                    unlockAccount();
 
-
-                    var getData = contract.GetOrgInfo2.getData(req.params.orgAddress);
-                    
-                    var gasNeeded = contract.GetOrgInfo2.estimateGas(req.params.orgAddress,
-                     { from: walletAddress });
-
-
-                    var trxAddr = web3.eth.sendTransaction({to:contractAddress, from:walletAddress, data: getData, 
-                        gas: gasNeeded, gasPrice: "180000000000"},function(error,result){
-                            if(error){
-                                res.send(error);
-                            }
-                            else{
-                                res.send(result);
-                            }
-                        });
-                    
+                    contract.GetOrgInfo2(req.params.orgAddress, function(error,result){
+                        if(error){
+                            res.send(error);
+                        }   
+                        else{
+                            res.send(result);
+                        }
+                    });    
 
                 });
 
@@ -314,25 +262,14 @@ if (typeof web3 !== 'undefined') {
 
                 app.get('/GetOrgInfo/:orgAddress',function(req,res){
 
-                    unlockAccount();
-
-
-                    var getData = contract.GetOrgInfo.getData(req.params.orgAddress);
-                    
-                    var gasNeeded = contract.GetOrgInfo.estimateGas(req.params.orgAddress,
-                     { from: walletAddress });
-
-
-                    var trxAddr = web3.eth.sendTransaction({to:contractAddress, from:walletAddress, data: getData, 
-                        gas: gasNeeded, gasPrice: "180000000000"},function(error,result){
-                            if(error){
-                                res.send(error);
-                            }
-                            else{
-                                res.send(result);
-                            }
-                        });
-
+                    contract.GetOrgInfo(req.params.orgAddress, function(error,result){
+                        if(error){
+                            res.send(error);
+                        }   
+                        else{
+                            res.send(result);
+                        }
+                    });
 
                 });
 
@@ -340,26 +277,15 @@ if (typeof web3 !== 'undefined') {
 
                 app.get('/IsOrgApproved/:userAddress/:orgAddress',function(req,res){
 
-                    
-                    unlockAccount();
 
-
-                    var getData = contract.IsOrgApproved.getData(req.params.userAddress,req.params.orgAddress);
-                    
-                    var gasNeeded = contract.IsOrgApproved.estimateGas(req.params.userAddress,req.params.orgAddress,
-                     { from: walletAddress });
-
-
-                    var trxAddr = web3.eth.sendTransaction({to:contractAddress, from:walletAddress, data: getData, 
-                        gas: gasNeeded, gasPrice: "180000000000"},function(error,result){
-                            if(error){
-                                res.send(error);
-                            }
-                            else{
-                                res.send(result);
-                            }
-                        });
-
+                    contract.GetOrgInfo(req.params.userAddress, req.params.orgAddress, function(error,result){
+                        if(error){
+                            res.send(error);
+                        }   
+                        else{
+                            res.send(result);
+                        }
+                    });
                     
 
                 });
