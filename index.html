@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Auth Application</title>
+</head>
+<body>
+<table cellspacing="30" border="1">
+	<tr>
+		<th><h3>Admin</h3></th>
+		<th><h3>User</h3></th>
+		<th><h3>Organisation</h3></th>
+	</tr>
+	<tr>
+		<td><!--Admin panel-->
+			<table>
+			
+				<tr>
+					<th>Add User</th>
+				</tr>
+
+				<tr>
+					<td>
+						Address: 
+					</td>
+					<td>
+						<input type="text" name="userAddress" id="adduser_userAddress" value="0xD6aE8250b8348C94847280928c79fb3b63cA453e" required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Last Name: 
+					</td>
+					<td>
+						<input type="text" name="lname" id="adduser_lname" value="lname" required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						First Name: 
+					</td>
+					<td>
+						<input type="text" name="fname" id="adduser_fname" value="fname" required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Email: 
+					</td>
+					<td>
+						<input type="text" name="email" id="adduser_email" value="email" required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Mobile Number: 
+					</td>
+					<td>
+						<input type="text" name="mno" id="adduser_mno" value="mno" required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Dob: 
+					</td>
+					<td>
+						<input type="text" name="dob" id="adduser_dob" value="dob" required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button onclick="AddUser()">Add User</button>
+					</td>					
+				</tr>
+			</table>
+			<br><br>
+
+			<table>
+			
+				<tr>
+					<th>Add Organisation</th>
+				</tr>
+
+				<tr>
+					<td>
+						Address: 
+					</td>
+					<td>
+						<input type="text" name="orgAddress" id="addorg_orgAddress" value="0x7ffC57839B00206D1ad20c69A1981b489f772031" required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Name: 
+					</td>
+					<td>
+						<input type="text" name="name" id="addorg_name" value="name" required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Address 1: 
+					</td>
+					<td>
+						<input type="text" name="address1" id="addorg_address1" value="address1" required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Address 2: 
+					</td>
+					<td>
+						<input type="text" name="address2" id="addorg_address2" value="address2" required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						City: 
+					</td>
+					<td>
+						<input type="text" name="city" id="addorg_city" value="city" required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						State: 
+					</td>
+					<td>
+						<input type="text" name="state" id="addorg_state" value="state" required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Country: 
+					</td>
+					<td>
+						<input type="text" name="country" id="addorg_country" value="country" required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Website: 
+					</td>
+					<td>
+						<input type="text" name="website" id="addorg_website" value="website" required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						isAdmin: 
+					</td>
+					<td>
+						<input type="checkbox" name="isAdmin" id="addorg_isAdmin"  required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						isVendor: 
+					</td>
+					<td>
+						<input type="checkbox" name="isVendor" id="addorg_isVendor"  required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						isKycApprovar: 
+					</td>
+					<td>
+						<input type="checkbox" name="isKycApprovar" id="addorg_isKycApprovar" required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button onclick="AddOrg()">Add User</button>
+					</td>					
+				</tr>
+			</table>
+		</td>
+
+
+		<td><!--User panel-->
+			<table>
+				<tr>
+					<th>AddUserOrgApproval</th>
+				</tr>
+				<tr>
+					<td>
+						User Address: 
+					</td>
+					<td>
+						<input type="text" id="AddUserOrgApproval_userAddress" value="0xD6aE8250b8348C94847280928c79fb3b63cA453e">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Orgnisation Address:
+					</td>
+					<td>
+						<input type="text" id="AddUserOrgApproval_orgAddress" value="0x7ffC57839B00206D1ad20c69A1981b489f772031">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button onclick="AddUserOrgApproval()">AddUserOrgApproval</button>
+					</td>
+				</tr>
+			</table>
+
+			<br><br>
+
+			<table>
+				<tr>
+					<th>Get User Info</th>
+				</tr>
+				<tr>
+					<td>
+						User Address:
+					</td>
+					<td>
+						<input type="text" id="GetUser_userAddress">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Requesting org Address:
+					</td>
+					<td>
+						<input type="text" id="GetUser_orgAddress">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button onclick="GetUser()">GetUserInfo</button>
+					</td>
+				</tr>
+			</table>
+
+		</td>
+
+
+		<td><!--Organisation panel-->
+			<table>
+				
+			<table>
+				<tr>
+					<th>GetOrgInfo</th>
+				</tr>
+				<tr>
+					<td>
+						Org Address: 
+					</td>
+					<td>
+						<input type="text" id="GetOrgInfo_orgAddress">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button onclick="GetOrgInfo()">GetOrgInfo</button>
+					</td>
+				</tr>
+			</table>
+
+			<br><br>
+
+			<table>
+				<tr>
+					<th>GetOrgPermissions</th>
+				</tr>
+				<tr>
+					<td>
+						Org Address: 
+					</td>
+					<td>
+						<input type="text" id="GetOrgInfo2_orgAddress">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button onclick="GetOrgInfo2()">GetOrgPermissions</button>
+					</td>
+				</tr>
+			</table>
+
+			<br><br>
+
+			<table>
+				<tr>
+					<th>Change KYC Approval Status</th>
+				</tr>
+				<tr>
+					<td>
+						User Address
+					</td>
+					<td>
+						<input type="text" id="ChangeKYCApprovalStatus_userAddress">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Org Address
+					</td>
+					<td>
+						<input type="text" id="ChangeKYCApprovalStatus_orgAddress">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						New status: 
+					</td>
+					<td>
+						<select id="ChangeKYCApprovalStatus_status">
+							<option value="n">Not Approved</option>
+							<option value="y">Approved</option>
+							<option value="p">In Process</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button onclick="ChangeKYCApprovalStatus()">ChangeKYCApprovalStatus</button>
+					</td>
+				</tr>
+
+			</table>
+
+			</table>
+		</td>
+	</tr>
+</table>
+
+
+<!--javascripts for interaction with contracts-->
+<script src="./node_modules/web3/dist/web3.min.js"></script>
+<script type="text/javascript">
+
+	if (typeof web3 !== 'undefined') {
+           var web3 = new Web3(web3.currentProvider);
+        } else {
+            // set the provider you want from Web3.providers
+           var web3 = new Web3(new Web3.providers.HttpProvider("http://54.205.136.66:8545/"));
+        }
+
+    var walletAddress = web3.eth.accounts[0];
+    var contractAddress = "0xbF02eAfF32F0078CDc0F6893a7Bf85aFfE3D9674";
+
+	web3.eth.defaultAccount = walletAddress;
+	console.log(walletAddress);
+
+
+
+	
+
+	var KYC_Contract = web3.eth.contract([ { "constant": false, "inputs": [ { "name": "orgAddress", "type": "address" }, { "name": "name", "type": "string" }, { "name": "address1", "type": "string" }, { "name": "address2", "type": "string" }, { "name": "city", "type": "string" }, { "name": "state", "type": "string" }, { "name": "country", "type": "string" }, { "name": "website", "type": "string" }, { "name": "isAdmin", "type": "bool" }, { "name": "isVendor", "type": "bool" }, { "name": "isKycApprovar", "type": "bool" } ], "name": "AddOrg", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [ { "name": "userAddress", "type": "address" }, { "name": "lastName", "type": "string" }, { "name": "firstName", "type": "string" }, { "name": "email", "type": "string" }, { "name": "mobileNumber", "type": "string" }, { "name": "dob", "type": "string" } ], "name": "AddUser", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [ { "name": "userAddress", "type": "address" }, { "name": "orgAddress", "type": "address" } ], "name": "GetUser", "outputs": [ { "name": "lastName", "type": "string", "value": "null" }, { "name": "firstName", "type": "string", "value": "null" }, { "name": "email", "type": "string", "value": "null" }, { "name": "mobileNumber", "type": "string", "value": "null" }, { "name": "dob", "type": "string", "value": "null" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "userAddress", "type": "address" }, { "name": "orgAddress", "type": "address" }, { "name": "aprrovalDoneBy", "type": "string" }, { "name": "approvalType", "type": "string" }, { "name": "approvalInfo", "type": "string" }, { "name": "status", "type": "string" } ], "name": "AddKYCApproval", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [ { "name": "userAddress", "type": "address" } ], "name": "GetUserOrgApprovalMapping", "outputs": [ { "name": "approvedOrgList", "type": "address[]", "value": [] } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "userAddress", "type": "address" }, { "name": "orgAddress", "type": "address" } ], "name": "AddUserOrgApproval", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [ { "name": "orgAddress", "type": "address" } ], "name": "GetOrgInfo2", "outputs": [ { "name": "isAdmin", "type": "bool", "value": false }, { "name": "isVendor", "type": "bool", "value": false }, { "name": "isKycApprovar", "type": "bool", "value": false } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "userAddress", "type": "address" } ], "name": "GetKYCApprovalLength", "outputs": [ { "name": "", "type": "uint256", "value": "0" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "orgAddress", "type": "address" }, { "name": "userAddress", "type": "address" }, { "name": "status", "type": "string" } ], "name": "ChangeKYCApprovalStatus", "outputs": [ { "name": "isChanged", "type": "bool" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [ { "name": "userAddress", "type": "address" }, { "name": "orgAddress", "type": "address" } ], "name": "IsOrgApproved", "outputs": [ { "name": "isApproved", "type": "bool", "value": false } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "userAddress", "type": "address" }, { "name": "index", "type": "uint256" } ], "name": "GetKYCApproval", "outputs": [ { "name": "aprrovalDoneBy", "type": "string" }, { "name": "approvalType", "type": "string" }, { "name": "approvalInfo", "type": "string" }, { "name": "status", "type": "string" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "orgAddress", "type": "address" } ], "name": "GetOrgInfo", "outputs": [ { "name": "name", "type": "string", "value": "" }, { "name": "address1", "type": "string", "value": "" }, { "name": "address2", "type": "string", "value": "" }, { "name": "city", "type": "string", "value": "" }, { "name": "state", "type": "string", "value": "" }, { "name": "country", "type": "string", "value": "" }, { "name": "website", "type": "string", "value": "" } ], "payable": false, "stateMutability": "view", "type": "function" } ]);
+
+        var contract = KYC_Contract.at(contractAddress);
+
+        console.log(contract);
+
+
+
+    function unlockAccount(){
+    	web3.personal.unlockAccount(walletAddress,"vasainc..");
+    }
+
+
+
+	function AddUser(){
+
+		unlockAccount();
+
+		var userAddress = document.getElementById("adduser_userAddress").value;
+		var lname = document.getElementById("adduser_lname").value;
+		var fname = document.getElementById("adduser_fname").value;
+		var email = document.getElementById("adduser_email").value;
+		var mno = document.getElementById("adduser_mno").value;
+		var dob = document.getElementById("adduser_dob").value;
+
+
+		var getData = contract.AddUser.getData(userAddress,
+			lname,fname,email,mno,dob);
+		
+		var gasNeeded = contract.AddUser.estimateGas(userAddress,lname,fname,email,mno,dob, { from: walletAddress });
+
+
+		web3.eth.sendTransaction({to:contractAddress, from:walletAddress, data: getData, 
+			gas: gasNeeded, gasPrice: "180000000000"},function (err,res){
+				if(err){
+					console.log(err);
+				}
+				else{
+					console.log(res);
+				}
+			});
+		
+		
+	}
+
+
+	function AddOrg(){
+
+		unlockAccount();
+
+		var orgAddress = document.getElementById("addorg_orgAddress").value;
+		var name = document.getElementById("addorg_name").value;
+		var address1 = document.getElementById("addorg_address1").value;
+		var address2 = document.getElementById("addorg_address2").value;
+		var city = document.getElementById("addorg_city").value;
+		var state = document.getElementById("addorg_state").value;
+		var country = document.getElementById("addorg_country").value;
+		var website = document.getElementById("addorg_website").value;
+		var isAdmin = document.getElementById("addorg_isAdmin").checked;
+		var isVendor = document.getElementById("addorg_isVendor").checked;
+		var isKycApprovar = document.getElementById("addorg_isKycApprovar").checked;
+
+
+		var getData = contract.AddOrg.getData(orgAddress,name,address1,address2,city,state,country,website,isAdmin,isVendor,isKycApprovar);
+
+
+		var gasNeeded = contract.AddOrg.estimateGas(orgAddress,name,address1,address2,city,state,country,website,isAdmin,isVendor,isKycApprovar, { from: walletAddress });
+
+
+		web3.eth.sendTransaction({to:contractAddress, from:walletAddress, data: getData, 
+			gas: gasNeeded, gasPrice: "180000000000"});
+		
+		
+	}
+
+	function AddUserOrgApproval(){
+		var userAddress = document.getElementById("AddUserOrgApproval_userAddress").value;
+		var orgAddress = document.getElementById("AddUserOrgApproval_orgAddress").value;
+
+		contract.AddUserOrgApproval(userAddress,orgAddress, function(err,res){
+                    if(err){
+                        console.log(err);
+                    }
+
+                    else{
+                        console.log(res);
+                    }
+                });
+	}
+
+	function GetOrgInfo(){
+		var orgAddress = document.getElementById("GetOrgInfo_orgAddress").value;
+
+		contract.GetOrgInfo(orgAddress, function(err,res){
+                	if(err){
+                		console.log(err);
+                	}
+
+                	else{
+                		console.log(res);
+                	}
+                });
+	}
+
+	function GetOrgInfo2(){
+		var orgAddress = document.getElementById("GetOrgInfo2_orgAddress").value;
+
+		contract.GetOrgInfo(orgAddress, function(err,res){
+                	if(err){
+                		console.log(err);
+                	}
+
+                	else{
+                		console.log(res);
+                	}
+                });
+	}
+
+	function GetUser(){
+		var userAddress = document.getElementById("GetUser_userAddress").value;
+		var orgAddress = document.getElementById("GetUser_orgAddress").value;
+
+		contract.GetUser(userAddress,orgAddress, function(error,result){
+                	if(error){
+                		console.log(error);
+                	}
+
+                	else{
+                		console.log(result);
+                	}
+                });
+	}
+
+
+	function ChangeKYCApprovalStatus(){
+		var userAddress = document.getElementById("ChangeKYCApprovalStatus_userAddress").value;
+		var orgAddress = document.getElementById("ChangeKYCApprovalStatus_orgAddress").value;
+		var status = document.getElementById("ChangeKYCApprovalStatus_status").value;
+
+		contract.ChangeKYCApprovalStatus(orgAddress, userAddress, status, function(err,res){
+                    if(err){
+                        console.log(err);
+                    }
+
+                    else{
+                        console.log(res);
+                    }
+                });
+	}
+</script>
+<!--end of javascripts-->
+</body>
+</html>

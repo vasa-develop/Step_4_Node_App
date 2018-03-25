@@ -56,10 +56,10 @@ var kyc = kycContract.new(
 		});
 
 		router.get("/viewUserInfo",function(req,res){
-				KYC.viewUserInfo("0x1158F15E74DCEc06AEAeEbA5b0EaA8461c73dB35",function(error,result){
-							if(error){
-								res.send(error);
-								console.log(error);
+				KYC.viewUserInfo("0x1158F15E74DCEc06AEAeEbA5b0EaA8461c73dB35",function(err,res){
+							if(err){
+								res.send(err);
+								console.log(err);
 					}
 							else{
 								res.send(result);
@@ -71,7 +71,7 @@ var kyc = kycContract.new(
 		// Tell express to use this router with /api before.
 		// You can put just '/' if you don't want any sub path before routes.
 
-		app.use("/user/",router);
+		app.use("/",router);
 
 		// Listen to this Port
 
@@ -82,8 +82,23 @@ var kyc = kycContract.new(
 
     else{
     		console.log(typeof contract);
-    		console.log(typeof contract.address);
+    		console.log();
     	
     }
  })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

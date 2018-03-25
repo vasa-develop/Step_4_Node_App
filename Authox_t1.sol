@@ -123,8 +123,7 @@ contract Authox_t1 {
         string firstName ,
         string email,
         string mobileNumber ,
-        string  dob 
-         
+        string  dob          
         )public returns(  string) {
             
          
