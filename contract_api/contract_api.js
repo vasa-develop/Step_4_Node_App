@@ -1,10 +1,20 @@
-var express = require("../include/import_express.js");
+var express = require("express");
+
 var app = express();
 
 //var KYC = require("./contract_server.js");
 var router = express.Router();
 
-var web3 = require("../include/import_web3.js");
+var Web3 = require('web3');
+
+
+if (typeof web3 !== 'undefined') {
+           var web3 = new Web3(web3.currentProvider);
+        } else {
+            // set the provider you want from Web3.providers
+           var web3 = new Web3(new Web3.providers.HttpProvider("http://54.205.136.66:8545/"));
+        }
+
 
 
         var walletAddress = web3.eth.accounts[0];

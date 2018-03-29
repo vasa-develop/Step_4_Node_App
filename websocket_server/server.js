@@ -3,7 +3,7 @@
 process.title = 'node-chat';
 // Port where we'll run the websocket server
 var webSocketsServerPort = 4000;
-var ip = "52.90.188.133";
+var ip = "54.205.136.66";
 // websocket and http servers
 
 var webSocketServer = require('../include/import_websocket.js').server;
