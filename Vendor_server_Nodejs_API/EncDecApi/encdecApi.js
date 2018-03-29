@@ -1,6 +1,6 @@
-const express = require('../include/import_express.js');
+const express = require('../../include/import_express.js');
 const app = express();
-var crypt = require('../include/encdec.js');
+var crypt = require('../../include/encdec.js');
 
 app.get('/decrypt/:id', (req, res) => {
   var result = crypt.decrypt(req.params.id);

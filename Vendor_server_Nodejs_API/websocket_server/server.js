@@ -6,8 +6,8 @@ var webSocketsServerPort = 4000;
 var ip = "54.205.136.66";
 // websocket and http servers
 
-var webSocketServer = require('../include/import_websocket.js').server;
-var http = require('../include/import_http.js');
+var webSocketServer = require('../../include/import_websocket.js').server;
+var http = require('../../include/import_http.js');
 
 
 /**
@@ -22,7 +22,7 @@ var certificate = "0x1158F15E74DCEc06AEAeEbA5b0EaA8461c73dB36";
 
 //Encrption and decryption
 
-var encrypt = require('../include/encdec.js');
+var encrypt = require('../../include/encdec.js');
 
 
 /**
