@@ -137,7 +137,7 @@ STEPS:
 
     <code>
 
-    geth --targetgaslimit "134217728" --datadir ./DataDir --networkid 1111 --bootnodes "enode://ade286d2b8b57649c7cfab765e53e24b2e1b4c26896403588830329582b679e9ae4b7c13d8b81fa35d361390e11ad8409e483467905cef7d7fbdbaaebb3ccf30@54.205.136.66:30303" --mine --minerthreads=1 --etherbase="0x30f28686aef33adbfbc13797b1d9f5a2f2759f56" console
+    geth --targetgaslimit "134217728" --datadir ./DataDir --networkid 1111 --bootnodes "enode://ade286d2b8b57649c7cfab765e53e24b2e1b4c26896403588830329582b679e9ae4b7c13d8b81fa35d361390e11ad8409e483467905cef7d7fbdbaaebb3ccf30@52.90.188.133:30303" --mine --minerthreads=1 --etherbase="0x30f28686aef33adbfbc13797b1d9f5a2f2759f56" console
 
     </code>
 
