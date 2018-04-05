@@ -44,25 +44,25 @@ STEPS:
 4. 
     create a genesis file named genesis.json and add the following in the file 
     <code>
-    {
-       "config": {
-          "chainId": 1994,
-          "homesteadBlock": 0,
-          "eip155Block": 0,
-          "eip158Block": 0,
-          "byzantiumBlock": 0
-       },
-       "difficulty": "400",
-       "gasLimit": "900000000000000000",
-       "alloc": {
-          "9a963d0eefeb62678d8efb48561c81e51c552797": { 
-              "balance": "9606938044258990275541962092341162602522202993782792835301376" 
-          },
-          "30f28686aef33adbfbc13797b1d9f5a2f2759f56": { 
-              "balance": "9606938044258990275541962092341162602522202993782792835301376" 
-          }
-       }
-    }
+{
+   "config": {
+      "chainId": 1994,
+      "homesteadBlock": 0,
+      "eip155Block": 0,
+      "eip158Block": 0,
+      "byzantiumBlock": 0
+   },
+   "difficulty": "0x100",
+   "gasLimit": "0x8000000",
+   "alloc": {
+      "9a963d0eefeb62678d8efb48561c81e51c552797": { 
+          "balance": "9606938044258990275541962092341162602522202993782792835301376" 
+      },
+      "30f28686aef33adbfbc13797b1d9f5a2f2759f56": { 
+          "balance": "9606938044258990275541962092341162602522202993782792835301376" 
+      }
+   }
+}
     </code>
 
 
@@ -137,7 +137,7 @@ STEPS:
 
     <code>
 
-    geth --targetgaslimit "134217728" --datadir ./DataDir --networkid 1111 --bootnodes "enode://ade286d2b8b57649c7cfab765e53e24b2e1b4c26896403588830329582b679e9ae4b7c13d8b81fa35d361390e11ad8409e483467905cef7d7fbdbaaebb3ccf30@54.205.136.66:30303" --mine --minerthreads=1 --etherbase="0x30f28686aef33adbfbc13797b1d9f5a2f2759f56" console
+    geth --targetgaslimit "134217728" --datadir ./DataDir --networkid 1111 --bootnodes "enode://958a90f189050dd02a76496b4ee6ccf03e7d18c26d437f524786b6a3400155ac8367579bbd5a705bac80c0144c439518b34b7dede08cc5e63c6fd7fbba74448d@54.205.136.66:30303" --mine --minerthreads=1 --etherbase="0x30f28686aef33adbfbc13797b1d9f5a2f2759f56" console
 
     </code>
 
